@@ -1,5 +1,3 @@
-package RPS;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
@@ -19,9 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class RockPaperScissors_GUI implements ActionListener {
-	public static void main(String[] args) {
-		new RockPaperScissors_GUI();
-	}
 	private JFrame frame = new JFrame();
 	private JPanel titlePanel = new JPanel();
 	private JLabel title = new JLabel();
@@ -64,7 +59,6 @@ public class RockPaperScissors_GUI implements ActionListener {
 			buttonPanel.add(buttons[i]);
 			buttons[i].setFont(new Font("MV Boli", Font.BOLD,20));
 			buttons[i].addActionListener(this);
-			//buttons[i].setBackground(new Color(123, 50, 250));
 			buttons[i].setForeground(new Color(123, 50, 250));
 		}
 		bottomPanel.add(outcome);
@@ -127,8 +121,6 @@ public class RockPaperScissors_GUI implements ActionListener {
 
 			}
 		}
-		System.out.printf("AIChoice: %s%n"
-				+ "User choice: %s%n", AIChoice, userChoice);
 	}
 	private void generateAIChoice() {
 		double value = Math.random() * 11;
@@ -155,5 +147,7 @@ public class RockPaperScissors_GUI implements ActionListener {
 	public void setUserChoice(String userChoice) {
 		this.userChoice = userChoice;
 	}
-	
+	public static void main(String[] args) {
+		new RockPaperScissors_GUI();
+	}
 }
